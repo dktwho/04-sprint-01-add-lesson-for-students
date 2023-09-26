@@ -4,7 +4,9 @@ import { decksAPI } from '../decks-api.ts'
 
 export const DecksList = () => {
   useEffect(() => {
-    decksAPI.fetchDecks().then((res) => {console.log(res.data.items)})
+    decksAPI.fetchDecks().then(() => {
+      dispatch()
+    })
   }, [])
   return <ul className={s.list}></ul>
 }
