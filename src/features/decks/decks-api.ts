@@ -11,8 +11,14 @@ export const decksAPI = {
   fetchDecks() {
     return instance.get<FetchDecksResponse>('decks');
   },
+	addDecks(params: AddDeckParams) {
+		return instance.post<Deck>('decks', params)
+	}
 }
 
+export type AddDeckParams = {
+	name: string
+}
 
 export type FetchDecksResponse = {
 	items: Deck[];
